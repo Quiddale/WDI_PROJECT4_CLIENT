@@ -30,6 +30,18 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/users/:id',
     templateUrl: '/js/views/users/show.html',
     controller: 'UsersShowCtrl as vm'
+  })
+  .state('worldsIndex',{
+    url: '/worlds',
+    templateUrl: '/js/views/world/index.html',
+    controller: 'WorldsIndexCtrl',
+    controllerAs: 'vm'
+  })
+  .state('worldsShow',{
+    url: '/worlds/:id',
+    templateUrl: '/js/views/world/show.html',
+    controller: 'WorldsShowCtrl',
+    controllerAs: 'vm'
   });
 
   $urlRouterProvider.otherwise('/');

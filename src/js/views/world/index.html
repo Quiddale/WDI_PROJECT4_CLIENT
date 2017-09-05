@@ -1,0 +1,7 @@
+<h1>Worlds</h1>
+
+<ul>
+  <li ng-repeat="world in vm.worlds">
+    <h4 ui-sref="worldsShow({ id: world.id })">{{ world.title }}</h4>
+  </li>
+</ul>

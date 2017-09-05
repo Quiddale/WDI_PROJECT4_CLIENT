@@ -1,7 +1,7 @@
 angular
   .module('pokemon')
   .config(Interceptor);
-
+  
 Interceptor.$inject = ['$httpProvider'];
 
 function Interceptor($httpProvider) {
