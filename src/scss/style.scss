@@ -1,16 +1,23 @@
 .pyramid {
-height: 192px;
-width: 120px;
-background: blue;
-position: absolute;
-margin-top: -500px;
-margin-left: 45%;
+  height: 192px;
+  width: 120px;
+  background: blue;
+  position: absolute;
+  margin-top: -500px;
+  margin-left: 45%;
+}
+
+.spot-container {
+  background: blue;
+  width: 96px;
+  height: 30px;
 }
 
 .worlds-show-container {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 800px;
+  margin-left: 25%;
 
   img {
     width: inherit;
@@ -20,17 +27,44 @@ margin-left: 45%;
   .spot {
     position: absolute;
     background: red;
-    width: 10px;
-    height: 10px;
-    top: 285px;
-    left: 235px;
+    width: 96px;
+    height: 96px;
+    top: 370px;
+    left: 300px;
   }
   .spottwo {
     position: absolute;
     background: blue;
-    width: 10px;
-    height: 10px;
-    top: 200px;
-    left: 235px;
+    width: 96px;
+    height: 96px;
+    top: 280px;
+    left: 120px;
   }
+}
+.worldsIndex h2 {
+  position: absolute;
+  color: gold;
+  top: 1000px;
+  left: 880px;
+  font-size: 40px;
+}
+
+.pokemon {
+  position: absolute;
+  top: 400px;
+  left: 540px;
+}
+
+.Worlds {
+
+  color: gold;
+  font-size: 150px;
+}
+
+.logout {
+  position: absolute;
+  color: green;
+  top: 1500px;
+
+  font-size: 60px;
 }

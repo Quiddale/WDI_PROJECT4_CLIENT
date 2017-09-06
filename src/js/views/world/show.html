@@ -7,7 +7,7 @@
 </div>
 {{vm.world.spots}}
 <ul>
-  <li ng-repeat="spot in vm.world.spots">
+  <li ng-click="vm.checkForPokemon(spot)" class="spot-container" ng-repeat="spot in vm.world.spots">
     <img src="{{ spot.pokemon.image }}" alt="">
   </li>
 </ul>
