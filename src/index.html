@@ -9,14 +9,35 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
+<header ng-controller="MainCtrl as main" role="banner">
+<nav id="navbar-primary" class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-primary-collapse">
+      <ul class="nav navbar-nav">
+        <li ng-hide="main.user"><a ui-sref="login">Login</a></li>
+        <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header><!-- header role="banner" -->
 <body ng-controller="MainCtrl as main">
   <ul>
     <li ng-show="main.selectedPokemon"><img src="{{ main.selectedPokemon.image }}" alt=""></li>
-    <li ng-hide="main.user"><a ui-sref="login">Login</a></li>
-    <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
-    <li ng-show="main.user"><a ng-click="main.logout()" class="logout">Logout</a></li>
+    <li ng-hide="main.user"><a class="login" ui-sref="login">Login</a></li>
+    <!-- <li ng-hide="main.user"><a class="login" ui-sref="register">Register</a></li>
+    <li ng-show="main.user"><a ng-click="main.logout()" class="logout"></a></li> -->
   </ul>
-  <main ui-view></main>
-
+  <main ui-view class="container"></main>
 </body>
 </html>

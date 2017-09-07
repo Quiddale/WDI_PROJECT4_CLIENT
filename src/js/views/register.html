@@ -1,7 +1,7 @@
-<h1>Register</h1>
+<!-- <h1>Register</h1> -->
 
 
-<form ng-submit="register.register()">
+<form ng-submit="register.register()" class="login">
   <div>
     <label for="username">Username</label>
     <input type="text" name="username" placeholder="username" ng-model="register.user.username">
@@ -14,10 +14,12 @@
     <label for="password">Password</label>
     <input type="password" name="password" placeholder="password" ng-model="register.user.password">
   </div>
+
   <div>
     <label for="passwordConfirmation">Confirm your password</label>
     <input type="password" name="passwordConfirmation" placeholder="confirm your password" ng-model="register.user.passwordConfirmation">
   </div>
+
   <input type="submit" value="Register">
 </form>
 <a ui-sref="login">Login</a>

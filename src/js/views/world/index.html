@@ -1,7 +1,17 @@
-<h1 class="Worlds">Worlds</h1>
-
 <ul>
-  <li ng-repeat="world in vm.worlds">
-    <h4 ui-sref="worldsShow({ id: world.id })">{{ world.title }}</h4>
+  <li ng-repeat="pokemon in vm.caughtPokemon track by $index">
+    <img src="{{ pokemon.image }}" alt="">
   </li>
 </ul>
+
+<h1 class="Worlds">Worlds</h1>
+<div class="row">
+  <div ng-repeat="world in vm.worlds" class="world-index">
+    <div class="col-sm-6">
+      <div class="world-card">
+        <h4 class="world-title" >{{ world.title }}</h4>
+        <img ui-sref="worldsShow({ id: world.id })" src="{{ world.image }}" alt="">
+      </div>
+    </div>
+  </div>
+</div>

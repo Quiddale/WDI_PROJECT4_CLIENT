@@ -20,6 +20,7 @@ function PokemonService(Pokemon, Spot, $rootScope) {
       setTimeout(function() {
         pokemonIndexArray.forEach((pokemon) => {
           pokemon.spot_id = 0;
+
           Pokemon
           .update({ id: pokemon.id }, { pokemon: pokemon })
           .$promise
@@ -33,21 +34,41 @@ function PokemonService(Pokemon, Spot, $rootScope) {
   }
 
   function choosePokemon() {
+    const pokemonArray = [];
     console.log('running');
     const id = Math.floor(Math.random() * 150) + 1;
     const pokemon = Pokemon.get({id: id});
 
+
     self.selectedPokemon = pokemon;
+    pokemonArray.push(pokemon);
     $rootScope.$broadcast('pokemonSelected');
 
+    for (var i = 0; i < 9; i++) {
+      const id = Math.floor(Math.random() * 150) + 1;
+      const pokemon = Pokemon.get({id: id});
+      pokemonArray.push(pokemon);
+    }
+
     setTimeout(function() {
-      assignPokemonToSpot(pokemon);
+      shuffle(pokemonArray);
+      assignPokemonToSpots(pokemonArray);
     }, 200);
   }
 
-  function assignPokemonToSpot(pokemon) {
-    const id = Math.floor(Math.random() * 11) + 1;
-    pokemon.spot_id = id;
-    Pokemon.update({ id: pokemon.id }, { pokemon: pokemon });
+  function assignPokemonToSpots(pokemonArray) {
+    pokemonArray.forEach((pokemon, index) => {
+      setTimeout(function() {
+        pokemon.spot_id = index + 1;
+        Pokemon.update({ id: pokemon.id }, { pokemon: pokemon });
+      }, 500);
+    });
+  }
+
+  function shuffle(a) {
+    for (let i = a.length; i; i--) {
+      const j = Math.floor(Math.random() * i);
+      [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
   }
 }

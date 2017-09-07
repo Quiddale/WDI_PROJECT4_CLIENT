@@ -2,8 +2,8 @@ angular
 .module('pokemon')
 .controller('WorldsShowCtrl', WorldsShowCtrl);
 
-WorldsShowCtrl.$inject = ['World', '$stateParams', '$scope', 'Pokemon', 'PokemonService', 'CurrentUserService', '$state'];
-function WorldsShowCtrl(World, $stateParams, $scope, Pokemon, PokemonService, CurrentUserService, $state) {
+WorldsShowCtrl.$inject = ['World', '$stateParams', '$scope', 'Pokemon', 'PokemonService', 'CurrentUserService', '$state', '$rootScope'];
+function WorldsShowCtrl(World, $stateParams, $scope, Pokemon, PokemonService, CurrentUserService, $state, $rootScope) {
   const vm = this;
 
   World
@@ -11,7 +11,6 @@ function WorldsShowCtrl(World, $stateParams, $scope, Pokemon, PokemonService, Cu
     .$promise
     .then(res => {
       vm.world = res;
-          console.log(vm.world);
     });
 
 
@@ -23,12 +22,15 @@ function WorldsShowCtrl(World, $stateParams, $scope, Pokemon, PokemonService, Cu
     if (spot.pokemon.toString() === parentPokemon.toString()) {
       console.log('Caught the pokemon');
 
-      parentPokemon.user_ids.push(CurrentUserService.currentUser.id);
+      if (parentPokemon.user_ids.indexOf(CurrentUserService.currentUser.id) === -1) {
+        parentPokemon.user_ids.push(CurrentUserService.currentUser.id);
+      }
 
       Pokemon
         .update({ id: parentPokemon.id }, { pokemon: parentPokemon })
         .$promise
         .then(() => {
+          $rootScope.$broadcast('pokemonCaught', { pokemon: parentPokemon});
           PokemonService.getPokemon();
           $state.go('worldsIndex');
         });

@@ -6,32 +6,28 @@
   margin-top: -500px;
   margin-left: 45%;
 }
-
 .spot-container {
-  background: blue;
+  position: absolute;
   width: 96px;
-  height: 30px;
+  height: 96px;
 }
-
 .worlds-show-container {
   position: relative;
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height: 600px;
   margin-left: 25%;
-
   img {
     width: inherit;
     height: inherit;
   }
-
-  .spot {
-    position: absolute;
-    background: red;
-    width: 96px;
-    height: 96px;
-    top: 370px;
-    left: 300px;
-  }
+  // .spot {
+  //   position: absolute;
+  //   background: red;
+  //   width: 96px;
+  //   height: 96px;
+  //   top: 310px;
+  //   left: 440px;
+  // }
   .spottwo {
     position: absolute;
     background: blue;
@@ -44,27 +40,94 @@
 .worldsIndex h2 {
   position: absolute;
   color: gold;
-  top: 1000px;
-  left: 880px;
+  top: 650px;
+  left: 600px;
   font-size: 40px;
+  font-family: "Avenir";
 }
-
 .pokemon {
   position: absolute;
-  top: 400px;
-  left: 540px;
+  top: 100px;
+  left: 240px;
 }
-
 .Worlds {
-
+  position: absolute;
+  top: 10px;
+  left: 650px;
   color: gold;
-  font-size: 150px;
+  font-size: 50px;
+  font-family: "Avenir";
+  text-align: center;
 }
-
 .logout {
   position: absolute;
   color: green;
-  top: 1500px;
-
+  top: 900px;
+  left: 1200px;
   font-size: 60px;
+  font-family: "Avenir";
+}
+.login {
+  position: absolute;
+  color: #1FABFF;
+  top: 400px;
+  left: 500px;
+  font-size: 25px;
+  background-color: #f1f1f1;
+  border: 1px solid #555;
+  text-align: center;
+}
+.world-title {
+  position: absolute;
+  color: blue;
+  font-size: 25px;
+  font-family: "Avenir";
+  // top: 50px;
+  left: 50px;
+}
+.keep-hunting {
+  position: absolute;
+  color: green;
+  font-size: 25px;
+  font-family: "Avenir";
+  top: 200px;
+  left: 50px;
+}
+
+.world-index {
+  text-align: center;
+}
+
+.world-card {
+  height: 510px;
+}
+
+header[role="banner"] {
+  #logo-main {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+#navbar-primary.navbar-default {
+  background: transparent;
+  border: none;
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+    > li {
+      display: inline-block;
+      float: none;
+      > a {
+        padding-left: 30px;
+        padding-right: 30px;
+        &:hover{
+          color: white;
+          background: black;
+          border-radius: 10px;
+        }
+      }
+
+    }
+  }
 }

@@ -1,13 +1,11 @@
-<h1>{{ vm.world.title }}</h1>
+<h1 class="world-title">{{ vm.world.title }}</h1>
+<div class="back-button" ui-sref="worldsIndex">
+  <h2 class="keep-hunting">Keep-Hunting</h2>
+</div>
 
 <div class="worlds-show-container">
   <img class="worlds-show" src="{{ vm.world.image }}">
-  <div class="spot"></div>
-  <div class="spottwo"></div>
+  <div ng-click="vm.checkForPokemon(spot)" ng-style="{top: '{{spot.top}}px', left: '{{spot.left}}px'}" class="spot-container" ng-repeat="spot in vm.world.spots">
+    <img src="{{ spot.pokemon.image }}">
+  </div>
 </div>
-{{vm.world.spots}}
-<ul>
-  <li ng-click="vm.checkForPokemon(spot)" class="spot-container" ng-repeat="spot in vm.world.spots">
-    <img src="{{ spot.pokemon.image }}" alt="">
-  </li>
-</ul>
