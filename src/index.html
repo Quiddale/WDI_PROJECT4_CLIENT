@@ -8,36 +8,35 @@
   <!-- endinject -->
   <!-- inject:css -->
   <!-- endinject -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
-<header ng-controller="MainCtrl as main" role="banner">
-<nav id="navbar-primary" class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-primary-collapse">
-      <ul class="nav navbar-nav">
-        <li ng-hide="main.user"><a ui-sref="login">Login</a></li>
-        <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
+<nav ng-controller="MainCtrl as main" class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"></a>
 
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a ng-hide="main.user" ui-sref="register">Register</a>
+      </li>
+      <li class="nav-item">
+        <a ng-hide="main.user" ui-sref="login">Login</a>
+      </li>
+      <li class="nav-item" ui-sref="worldsIndex">
+        <a ng-show="main.user">Home</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="centerPokemon" ng-show="main.selectedPokemon">
+      <img class="poke" ui-sref="home" src="{{ main.selectedPokemon.image }}" alt="">
+    </div>
+  </div>
+
 </nav>
-</header><!-- header role="banner" -->
-<body ng-controller="MainCtrl as main">
-  <ul>
-    <li ng-show="main.selectedPokemon"><img src="{{ main.selectedPokemon.image }}" alt=""></li>
-    <li ng-hide="main.user"><a class="login" ui-sref="login">Login</a></li>
-    <!-- <li ng-hide="main.user"><a class="login" ui-sref="register">Register</a></li>
-    <li ng-show="main.user"><a ng-click="main.logout()" class="logout"></a></li> -->
-  </ul>
-  <main ui-view class="container"></main>
-</body>
+<main ui-view class="container"></main>
 </html>

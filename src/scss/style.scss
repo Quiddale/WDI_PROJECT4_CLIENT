@@ -13,8 +13,8 @@
 }
 .worlds-show-container {
   position: relative;
-  width: 600px;
-  height: 600px;
+  max-width: 600px;
+  min-height: 600px;
   margin-left: 25%;
   img {
     width: inherit;
@@ -51,7 +51,6 @@
   left: 240px;
 }
 .Worlds {
-  position: absolute;
   top: 10px;
   left: 650px;
   color: gold;
@@ -102,32 +101,41 @@
   height: 510px;
 }
 
-header[role="banner"] {
-  #logo-main {
-    display: block;
-    margin: 20px auto;
-  }
+.caught{
+  display: inline-block;
+}
+.world-container{
+  clear: both;
 }
 
-#navbar-primary.navbar-default {
-  background: transparent;
-  border: none;
-  .navbar-nav {
-    width: 100%;
-    text-align: center;
-    > li {
-      display: inline-block;
-      float: none;
-      > a {
-        padding-left: 30px;
-        padding-right: 30px;
-        &:hover{
-          color: white;
-          background: black;
-          border-radius: 10px;
-        }
-      }
+.nav-item{
+  margin-left: 50px;
+  font-size: 25px;
+}
 
+.poke{
+  cursor: pointer;
+  text-align: center;
+}
+
+.centerMe{
+  text-align: center;
+    color: #0080ff;
+    &:hover{
+      color: #0000cc;
     }
-  }
+}
+.Pokemon_Hunt{
+  font-size: 50px;
+  cursor: pointer;
+
+}
+
+
+.centerPokemon{
+  background: white!important;
+  margin-right: 600px;
+  border: 1px solid grey;
+  border-radius: 50%;
+
 }
