@@ -17,8 +17,7 @@ function WorldsShowCtrl(World, $stateParams, $scope, Pokemon, PokemonService, Cu
   vm.checkForPokemon = checkForPokemon;
 
   function checkForPokemon(spot) {
-    // const parentPokemon = $scope.$parent.main.selectedPokemon;
-    console.log($scope);
+    const parentPokemon = $scope.$parent.main.selectedPokemon;
 
     if (spot.pokemon.toString() === parentPokemon.toString()) {
       console.log('Caught the pokemon');

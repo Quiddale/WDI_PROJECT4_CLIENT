@@ -15,7 +15,7 @@ function MainCtrl($rootScope, CurrentUserService, $state, PokemonService, $scope
 
   $rootScope.$on('pokemonSelected', () => {
     vm.selectedPokemon = PokemonService.selectedPokemon;
-    console.log(vm.selectedPokemon);
+    console.log('THIS IS THE SELECTED POKEMON ASSIGNED IN THE MAIN CONTROLLER', vm.selectedPokemon);
   });
 
   $rootScope.$on('loggedOut', () => {
