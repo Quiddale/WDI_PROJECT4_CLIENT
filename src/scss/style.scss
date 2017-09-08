@@ -51,8 +51,9 @@
   left: 240px;
 }
 .Worlds {
-  top: 10px;
-  left: 650px;
+
+  // margin-left: 50px;
+  // font-size: 25px;
   color: gold;
   font-size: 50px;
   font-family: "Avenir";
@@ -111,11 +112,18 @@
 .nav-item{
   margin-left: 50px;
   font-size: 25px;
+  background: white;
+  color: gold;
+  padding: 7px;
+  border-radius: 5px;
+  &:hover{
+    color: blue;
+  }
 }
 
 .poke{
   cursor: pointer;
-  text-align: center;
+  // text-align: center;
 }
 
 .centerMe{
@@ -131,11 +139,104 @@
 
 }
 
-
 .centerPokemon{
   background: white!important;
-  margin-right: 600px;
   border: 1px solid grey;
   border-radius: 50%;
+  margin-right: 675px;
+}
 
+header[role="banner"] {
+  #logo-main {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+// #navbar-primary.navbar-default {
+//   background: transparent;
+//   border: none;
+//   .navbar-nav {
+//     width: 100%;
+//     text-align: center;
+//     > li {
+//       display: inline-block;
+//       float: none;
+//       > a {
+//         padding-left: 30px;
+//         padding-right: 30px;
+//         }
+//     }
+//   }
+// }
+
+nav{
+  background-image: url('https://images.freecreatives.com/wp-content/uploads/2016/03/Free-HD-Pokemon-Wallpapers.jpg')!important;
+}
+
+
+$red:#F44336;
+@mixin transition($in) {
+	transition:$in;
+	-webkit-transition:$in;
+	-moz-transition:$in;
+	-o-transition:$in;
+	-ms-transition:$in;
+}
+@mixin transform($in) {
+	transform:$in;
+	-webkit-transform:$in;
+	-moz-transform:$in;
+	-o-transform:$in;
+	-ms-transform:$in;
+}
+@mixin animation($in) {
+	animation:$in;
+	-webkit-animation:$in;
+	-moz-animation:$in;
+	-o-animation:$in;
+	-ms-animation:$in;
+}
+
+
+.two {
+	color:black;
+
+	&:hover {
+		border-color:$red;
+		color:$red;
+		@include animation(shakeThatBooty 0.3s linear 1);
+	}
+}
+
+@keyframes shakeThatBooty {
+	33% {
+		@include transform(rotateZ(10deg));
+	}
+	67% {
+		@include transform(rotateZ(-10deg));
+	}
+	100% {
+		@include transform(rotateZ(10deg));
+	}
+}
+
+.myButt {
+	outline:none;
+	border:none;
+	padding:20px;
+	display:block;
+	margin:0 auto;
+	cursor:pointer;
+	font-size:20px;
+	background-color:transparent;
+	position:relative;
+	border:2px solid #fff;
+
+	@include transition(all 0.5s ease);
+}
+
+
+gifMe{
+  margin: 0 auto;
 }
