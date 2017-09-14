@@ -1,3 +1,3 @@
 angular
 .module('pokemon')
-.constant('API', 'http://localhost:3000/api');
+.constant('API', 'https://thawing-beach-79814.herokuapp.com/api');
