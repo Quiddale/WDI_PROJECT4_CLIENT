@@ -11,7 +11,7 @@ Catch My Pokemon
 **What really exciting to tackle**
 
 =======
-<<<<<<< HEAD
+
 
 
 ---
