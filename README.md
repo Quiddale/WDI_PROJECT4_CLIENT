@@ -1,4 +1,4 @@
-#OulipoGram
+OulipoGram
 
 **Concept**
 
@@ -75,4 +75,3 @@ Built with: AngularJS, Node.js, MongoDB, Express, HTML, SCSS, Bootstrap, Slick, 
 ![alt text](https://i.imgur.com/ABuhJH4.png "Collision Course Screengrab")
 
 All projects and my details can be found here -> www.qosullivan.com
->>>>>>> 739380e22f8aee1f9657ce7bda36f61b1d72c14b
